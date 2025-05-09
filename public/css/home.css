@@ -48,10 +48,16 @@
   border-radius: 2px;
 }
 
+/* Flexbox layout for event cards (3 cards per row) */
 .event-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   gap: 2em;
+}
+
+.event-card {
+  flex: 1 1 30% !important;  /* Three cards per row */
 }
 
 .event-card-inner {
@@ -88,4 +94,11 @@
   color: #636e72;
   font-size: 0.95em;
   line-height: 1.4em;
+}
+
+/* Responsive Layout for smaller screens (1 card per row on mobile) */
+@media (max-width: 768px) {
+  .event-card {
+    flex: 100% !important;  /* Three cards per row */
+  }
 }

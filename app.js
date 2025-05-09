@@ -7,7 +7,7 @@ const path = require('path');
 const pageRoutes = require('./routes/pageRoutes');
 
 app = express();
-port = 3000;
+port = 5000;
 
 // Enables the use of static files (css, js, etc.)
 app.use(express.static(path.join(__dirname, "public")));
