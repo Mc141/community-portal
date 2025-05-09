@@ -1,0 +1,42 @@
+/* Footer styling */
+.custom-footer {
+    background-color: #ffffff;
+    border-top: 1px solid #ddd;
+    padding: 1em 2em;
+    text-align: center;
+    color: #444;
+    margin-top: auto;
+  }
+  
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5em;
+  }
+  
+  .footer-links a {
+    margin: 0 0.5em;
+    color: #444;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  
+  .footer-links a:hover {
+    color: #000;
+  }
+  
+  /* Sticky footer layout support */
+  html, body {
+    height: 100%;
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  main {
+    flex: 1;
+  }
+  

@@ -1,0 +1,57 @@
+/* General Styling */
+body {
+    font-family: 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fafafa;
+  }
+  
+  .custom-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em 2em !important;
+    background-color: #ffffff;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .brand {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+  }
+  
+  /* Menu List */
+  .pure-menu-list {
+    display: flex;
+    gap: 1em;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .pure-menu-link {
+    color: #444;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+  
+  .pure-menu-link:hover {
+    background-color: #f2f2f2;
+    border-radius: 4px;
+  }
+  
+  /* Active tab highlighting */
+  .pure-menu-link.active {
+    background-color: #333;
+    color: white;
+    border-radius: 4px;
+  }
+  
+  /* Remove the white outline */
+  .pure-menu-link:focus {
+    outline: none;
+  }
+  

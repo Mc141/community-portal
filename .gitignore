@@ -1,1 +1,36 @@
-/node_modules
+# Node modules
+/node_modules/
+
+# Logs
+*.log
+*.log.*
+
+# Environment files
+.env
+
+# Dependency directories
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build output
+/dist
+/build
+
+# IDE specific files
+.vscode/
+.idea/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Coverage folder (for testing tools like Jest, etc.)
+/coverage
+
+# Miscellaneous
+*.swp
+*.swo
+
+# Ignore test files if not needed
+/tests
