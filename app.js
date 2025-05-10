@@ -3,11 +3,16 @@ const ejs = require('ejs');
 const path = require('path');
 
 
+
+
 // Import routes defined in pageRoutes module
 const pageRoutes = require('./routes/pageRoutes');
 
 app = express();
 port = 5000;
+
+ //Body parser for form data
+app.use(express.urlencoded({ extended: true }));
 
 // Enables the use of static files (css, js, etc.)
 app.use(express.static(path.join(__dirname, "public")));
@@ -25,3 +30,4 @@ app.use('/', pageRoutes);
 app.listen(port, () => {
     console.log(`Server running on http://localhost:${port}`)
   })
+
