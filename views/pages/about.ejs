@@ -1,7 +1,14 @@
 <%- include('../partials/header') %>
 
 <main>
-    <h1>This is the about page</h1>
+    <h1>Meet our Team</h1>
+    <ul class="team-list">
+  <% team.forEach(member => { %>
+    <li class="team-member">
+      <strong><%= member.name %></strong> – <%= member.role %>
+    </li>
+  <% }) %>
+</ul>
 </main>
 
 <%- include('../partials/footer') %>

@@ -10,7 +10,14 @@ router.get('/', function (req, res) {
 
 // about page router
 router.get('/about', function (req, res) {
-    res.render('about', {title: 'About Us', activePage: 'about'});
+    const teamMembers = [
+        { name: 'PLACEHOLDER', role: 'PLACEHOLDER' },
+        { name: 'PLACEHOLDER', role: 'PLACEHOLDER' },
+        { name: 'PLACEHOLDER', role: 'PLACEHOLDER' },
+        { name: 'PLACEHOLDER', role: 'PLACEHOLDER' },
+        { name: 'PLACEHOLDER', role: 'PLACEHOLDER' }
+    ];
+    res.render('about', {title: 'About Us', activePage: 'about', team: teamMembers});
 });
 
 
