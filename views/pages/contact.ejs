@@ -1,19 +1,60 @@
 <%- include('../partials/header') %>
 
 <main>
-    <h1>Contact Us</h1>
-<form action="/contact" method="POST">
-  <label for="name">Name:</label><br>
-  <input type="text" id="name" name="name" required><br><br>
 
-  <label for="email">Email:</label><br>
-  <input type="email" id="email" name="email" required><br><br>
+  <div class="contact-container">
+    <div class="contact-left">
+    <img src="/images/ContactPagePic.png" alt="Contact Image">
+    </div>
 
-  <label for="message">Message:</label><br>
-  <textarea id="message" name="message" rows="4" required></textarea><br><br>
+    <div class="contact-right">   
+      <form action="/contact" method="POST" onsubmit="return validateForm()" novalidate>
+        <h2>Send Us an Enquiry</h2>
 
-  <button type="submit">Submit</button>
-</form>
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Your Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Your Phone</label>
+        <input type="text" id="phone" name="phone" pattern="^[0-9+\-\s]{7,15}$">
+
+        <label for="message">Your Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit">Send Enquiry</button>
+    </form>
+  </div>
+</div>
+
+<script>
+  function validateForm() {
+    const name = document.getElementById('name');
+    const email = document.getElementById('email');
+    const message = document.getElementById('message');
+    const phone = document.getElementById('phone');
+
+    if (!name.value.trim() || !email.value.trim() || !message.value.trim()) {
+      alert('Please fill in all required fields.');
+      return false;
+    }
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email.value.trim())) {
+      alert('Please enter a valid email address.');
+      return false;
+    }
+
+    const phonePattern = /^[0-9+\-\s]{7,15}$/;
+    if (phone.value && !phonePattern.test(phone.value)) {
+      alert('Phone number format is invalid.');
+      return false;
+    }
+
+    return true;
+  }
+</script>
 </main>
 
 <%- include('../partials/footer') %>

@@ -27,12 +27,34 @@ router.get('/contact', function (req, res) {
     res.render('contact', { title: 'Contact Us', activePage: 'contact' });
 });
 router.post('/contact', function (req, res) {
-    const { name, email, message } = req.body;
+    const { name, email, phone, message } = req.body;
+
+    if (!name || !email || !phone || !message) {
+    return res.status(400).send('Please fill in all required fields.');
+  }
+
+  const trimmedName = name.trim();
+  const trimmedEmail = email.trim();
+  const trimmedMessage = message.trim();
+  const trimmedPhone = phone ? phone.trim() : '';
+
+  //Email validation
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(trimmedEmail)) {
+    return res.status(400).send('Please enter a valid email address.');
+    return false;
+}   
+    //phone validation
+  const phonePattern = /^[0-9+\-\s]{7,15}$/;
+    if (trimmedPhone && !phonePattern.test(trimmedPhone)) {
+    return res.status(400).send('Phone number format is invalid.');
+  }
 
     contactSubmissions.push({
-        name,
-        email,
-        message,
+        name: trimmedName,
+        email: trimmedEmail,
+        phone: trimmedPhone,
+        message: trimmedMessage,
         timestamp: new Date()
     });
 
