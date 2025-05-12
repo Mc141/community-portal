@@ -1,14 +1,52 @@
+<link rel="stylesheet" href="/css/about.css">
+
 <%- include('../partials/header') %>
 
 <main>
-    <h1>Meet our Team</h1>
+    <h1>Meet Our Event Organizers</h1>
     <ul class="team-list">
-  <% team.forEach(member => { %>
-    <li class="team-member">
-      <strong><%= member.name %></strong> – <%= member.role %>
-    </li>
-  <% }) %>
-</ul>
+        <li class="team-member">
+            <img src="/images/john-doe.jpg" alt="John Doe" class="organizer-img">
+            <strong>John Doe</strong>  – <strong>Community Meetup Organizer</strong> 
+            <p>John is passionate about bringing people together. As the organizer of our Community Meetup, he ensures a welcoming space for networking and collaboration.</p>
+
+        </li>
+        
+        <li class="team-member">
+            <img src="/images/jane-smith.jpg" alt="Jane Smith" class="organizer-img">
+            <strong>Jane Smith</strong>  – <strong>Tech Workshop Host</strong>
+            <p>Jane is a tech enthusiast dedicated to knowledge-sharing. She organizes hands-on coding workshops that allow developers to explore new technologies.</p>
+
+        </li>
+        
+        <li class="team-member">
+            <img src="/images/greenteam.jpg" alt="GreenTeam" class="organizer-img">
+            <strong>GreenTeam</strong>  – <strong>Park Cleanup Organizers</strong>
+            <p>The GreenTeam is committed to environmental sustainability. They lead initiatives like park cleanups to maintain our shared green spaces.</p>
+
+        </li>
+
+        <li class="team-member">
+            <img src="/images/readers-club.jpg" alt="Readers Club" class="organizer-img">
+            <strong>Readers Club</strong>  – <strong>Book Fair Hosts</strong>
+            <p>The Readers Club loves fostering literary engagement. Their book fair offers a space for book lovers to meet authors and explore diverse genres.</p>
+
+        </li>
+
+        <li class="team-member">
+            <img src="/images/activelife.jpg" alt="ActiveLife" class="organizer-img">
+            <strong>ActiveLife</strong>  – <strong>Charity Run Organizers</strong>
+            <p>ActiveLife motivates the community to stay active while making a difference. Their charity run raises funds for children's education.</p>
+
+        </li>
+
+        <li class="team-member">
+            <img src="/images/arts-united.jpg" alt="Arts United" class="organizer-img">
+            <strong>Arts United</strong>  – <strong>Art Exhibition Coordinators</strong>
+            <p>Arts United celebrates creative expression by organizing exhibitions that showcase emerging local artists.</p>
+
+        </li>
+    </ul>
 </main>
 
 <%- include('../partials/footer') %>
