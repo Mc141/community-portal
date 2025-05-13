@@ -1,33 +1,30 @@
 const express = require('express');
-const ejs = require('ejs');
 const path = require('path');
-
-
-
-
-// Import routes defined in pageRoutes module
+const ejs = require('ejs');
+const expressLayouts = require('express-ejs-layouts');
 const pageRoutes = require('./routes/pageRoutes');
+require('dotenv').config();
 
-app = express();
-port = 5000;
+const app = express();
 
- //Body parser for form data
-app.use(express.urlencoded({ extended: true }));
+// Configuration
+const PORT = process.env.PORT || 3100;
+const HOST = process.env.HOST || 'localhost';
 
-// Enables the use of static files (css, js, etc.)
-app.use(express.static(path.join(__dirname, "public")));
-
-// Sets render engine to ejs
+// View Engine Setup
 app.set('view engine', 'ejs');
-// Sets express to look for ejs templates in /views/pages, instead of /views
-app.set('views', path.join(__dirname, '/views/pages'));
+app.set('views', path.join(__dirname, 'views'));
+app.use(expressLayouts);
+app.set('layout', 'layout'); // layout.ejs as default
 
+// Middleware
+app.use(express.urlencoded({ extended: true })); // parse form data
+app.use(express.static(path.join(__dirname, 'public'))); // serve static files
 
-// Use the router defined in the pageRoutes module
+// Routes
 app.use('/', pageRoutes);
 
-
-app.listen(port, () => {
-    console.log(`Server running on http://localhost:${port}`)
-  })
-
+// Start Server
+app.listen(PORT, () => {
+  console.log(`Server running at http://${HOST}:${PORT}`);
+});

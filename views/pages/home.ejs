@@ -1,41 +1,31 @@
-<link rel="stylesheet" href="/css/home.css">
+<div class="pure-g home-container">
 
-<%- include('../partials/header') %>
+  <div class="pure-u-1 welcome-section">
+    <h1>Welcome to Our Community Portal</h1>
+    <p>Connecting people, events, and ideas in one vibrant space.</p>
+  </div>
 
-<main>
-    
-  <div class="pure-g home-container">
+  <h2>Upcoming Events</h2>
 
-    <div class="pure-u-1 welcome-section">
-      <h1>Welcome to Our Community Portal</h1>
-      <p>Connecting people, events, and ideas in one vibrant space.</p>
-    </div>
+  <!-- START: dynamic -->
+  <div class="pure-u-1 events-section">
+    <div class="pure-g event-list">
 
-      <h2>Upcoming Events</h2>
-      
-        <!-- START: dynamic -->
-        <div class="pure-u-1 events-section">
-      <div class="pure-g event-list">
-
-        <% events.forEach(function(event) { %>
-          <div class="pure-u-1 pure-u-md-1-3 event-card">
-            <div class="event-card-inner">
-              <img src="<%= event.image %>" 
-                   alt="<%= event.title %>" 
-                   class="event-img">
-              <h3><%= event.title %></h3>
-              <p><strong>Date:</strong> <%= event.date %></p>
-              <p><strong>Location:</strong> <%= event.location %></p>
-              <p class="event-desc"><%= event.description %></p>
-            </div>
+      <% events.forEach(function(event) { %>
+        <div class="pure-u-1 pure-u-md-1-3 event-card">
+          <div class="event-card-inner">
+            <img src="<%= event.image %>" 
+                 alt="<%= event.title %>" 
+                 class="event-img">
+            <h3><%= event.title %></h3>
+            <p><strong>Date:</strong> <%= event.date %></p>
+            <p><strong>Location:</strong> <%= event.location %></p>
+            <p class="event-desc"><%= event.description %></p>
           </div>
-        <% }); %>
-        <!-- END: Dynamic -->
-
-      </div>
+        </div>
+      <% }); %>
     </div>
+  </div>
+  <!-- END: Dynamic -->
 
-
-</main>
-
-<%- include('../partials/footer') %>
+</div>

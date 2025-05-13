@@ -1,36 +1,27 @@
-<link rel="stylesheet" href="/css/events.css">
+<section class="events-header">
+  <h1>All Community Events</h1>
+  <p>Explore upcoming and past events happening in our community.</p>
+</section>
 
-<%- include('../partials/header') %>
+<section class="event-list">
 
-<main>
-  <section class="events-header">
-    <h1>All Community Events</h1>
-    <p>Explore upcoming and past events happening in our community.</p>
-  </section>
-
-  <section class="event-list">
-
-    <!-- START: dynamic -->
-
-<div class="pure-g event-list">
-  <% events.forEach(event => { %>
-    <div class="pure-u-1 pure-u-md-1-3">
-      <div class="event-card">
-        <img src="<%= event.image %>" alt="<%= event.title %>" class="event-img">
-        <div class="event-details">
-          <h3><%= event.title %></h3>
-          <p><strong>Date:</strong> <%= event.date %></p>
-          <p><strong>Location:</strong> <%= event.location %></p>
-          <p><strong>Organizer:</strong> <%= event.organizer %></p>
-          <p class="event-desc"><%= event.description %></p>
+  <!-- START: dynamic -->
+  <div class="pure-g event-list">
+    <% events.forEach(event => { %>
+      <div class="pure-u-1 pure-u-md-1-3">
+        <div class="event-card">
+          <img src="<%= event.image %>" alt="<%= event.title %>" class="event-img">
+          <div class="event-details">
+            <h3><%= event.title %></h3>
+            <p><strong>Date:</strong> <%= event.date %></p>
+            <p><strong>Location:</strong> <%= event.location %></p>
+            <p><strong>Organizer:</strong> <%= event.organizer %></p>
+            <p class="event-desc"><%= event.description %></p>
+          </div>
         </div>
       </div>
-    </div>
-  <% }); %>
-</div>
-    <!-- END: dynamic -->
+    <% }); %>
+  </div>
+  <!-- END: dynamic -->
 
-  </section>
-</main>
-
-<%- include('../partials/footer') %>
+</section>

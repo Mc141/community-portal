@@ -24,7 +24,7 @@
 /* Event List Grid */
 .event-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(540px, 1fr));
+  grid-template-columns: 1fr;
   gap: 2em;
   padding: 0 2em 3em;
   max-width: 1300px;

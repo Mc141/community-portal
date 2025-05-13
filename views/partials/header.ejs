@@ -1,30 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title><%= title %></title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/base-min.css"> <!-- Normalise cdn -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
-  <link rel="stylesheet" href="/css/styles.css">
-  <link rel="stylesheet" href="/css/header.css">
-
-  <link rel="stylesheet" href="/css/footer.css">
-</head>
-<body>
-  <header>
-    <div class="custom-nav pure-menu pure-menu-horizontal pure-menu-scrollable">
-      <a href="/" class="pure-menu-heading pure-menu-link brand">Portal</a>
-      <ul class="pure-menu-list">
-        <li class="pure-menu-item">
-          <a href="/about" class="pure-menu-link <%= activePage === 'about' ? 'active' : '' %>">About</a>
-        </li>
-        <li class="pure-menu-item">
-          <a href="/events" class="pure-menu-link <%= activePage === 'events' ? 'active' : '' %>">Events</a>
-        </li>
-        <li class="pure-menu-item">
-          <a href="/contact" class="pure-menu-link <%= activePage === 'contact' ? 'active' : '' %>">Contact Us</a>
-        </li>
-      </ul>
-    </div>
-  </header>
+<header>
+  <div class="custom-nav pure-menu pure-menu-horizontal pure-menu-scrollable">
+    <a href="/" class="pure-menu-heading pure-menu-link brand">Portal</a>
+    <ul class="pure-menu-list">
+      <li class="pure-menu-item">
+        <a href="/about" class="pure-menu-link <%= activePage === 'about' ? 'active' : '' %>">
+          About
+        </a>
+      </li>
+      <li class="pure-menu-item">
+        <a href="/events" class="pure-menu-link <%= activePage === 'events' ? 'active' : '' %>">
+          Events
+        </a>
+      </li>
+      <li class="pure-menu-item">
+        <a href="/contact" class="pure-menu-link <%= activePage === 'contact' ? 'active' : '' %>">
+          Contact Us
+        </a>
+      </li>
+    </ul>
+  </div>
+</header>
