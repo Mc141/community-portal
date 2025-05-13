@@ -1,23 +1,31 @@
 .contact-container {
   display: flex;
-  flex-wrap: wrap;
-  padding: 40px;
+  justify-content: center;   
+  align-items: stretch;      
   gap: 40px;
-  justify-content: center;
-  align-items: flex-start;
+  padding: 40px;
+  max-width: 1000px;         
+  margin: 0 auto;            
+}
+
+.contact-left,
+.contact-right {
+  flex: 0 0 45%;             
+  box-sizing: border-box;
 }
 
 .contact-left img {
+  display: block;
   width: 100%;
-  max-width: 500px;
-  height: 475px;
-  border-radius: 8px;
+  height: 100%;
   object-fit: cover;
+  border-radius: 8px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
 }
 
 .contact-right {
-  flex: 1;
+  flex: 1 1 500px;          
+  box-sizing: border-box;
   max-width: 500px;
   padding: 20px;
   background-color: #ffffff;
